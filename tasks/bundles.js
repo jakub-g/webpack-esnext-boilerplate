@@ -75,7 +75,9 @@ const baseConfig = {
       sourceMap: true,
       terserOptions: {
         mangle: {
-          properties: /(^_|_$)/,
+          properties: {
+            regex: /(^_|_$)/,
+          },
         },
         safari10: true,
       },
