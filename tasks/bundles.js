@@ -70,10 +70,13 @@ const baseConfig = {
   optimization: {
     runtimeChunk: 'single',
     minimizer: [new TerserPlugin({
+      test: /\.m?js(\?.*)?$/i,
       sourceMap: true,
       terserOptions: {
         mangle: {
-          properties: /(^_|_$)/,
+          properties: {
+            regex: /(^_|_$)/,
+          },
         },
         safari10: true,
       },
