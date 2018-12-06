@@ -48,16 +48,16 @@ const configureBabelLoader = (browserlist) => {
       options: {
         babelrc: false,
         presets: [
-          ['env', {
+          ['@babel/preset-env', {
             debug: true,
             modules: false,
-            useBuiltIns: true,
+            useBuiltIns: 'entry',
             targets: {
               browsers: browserlist,
             },
           }],
         ],
-        plugins: ['syntax-dynamic-import'],
+        plugins: ['@babel/plugin-syntax-dynamic-import'],
       },
     },
   };
