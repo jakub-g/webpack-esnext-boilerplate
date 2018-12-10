@@ -1,7 +1,7 @@
 {
   "publicPath": "/",
+  "publicPathCdn": "http://localhost:8081/",
   "publicDir": "public",
-  "publicStaticPath": "/",
   "publicStaticDir": "public",
   "manifestFileName": "revisioned-asset-manifest.json"
 }

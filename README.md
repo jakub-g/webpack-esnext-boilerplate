@@ -28,6 +28,23 @@ By default the build output is unminified. To generate minified, production-read
 NODE_ENV=production npm run build
 ```
 
+### Simulating a cross-origin environment
+
+By setting `USE_CROSSORIGIN_CDN` to `1`, the JavaScript assets in the HTML will be requested from a different origin (different port on localhost), and an additional `localhost:8081` server will be started with `Access-Control-Allow-Origin` response header configured (necessary for crossorigin modules to be executed by the browser).
+
+To start the watch mode:
+
+```sh
+USE_CROSSORIGIN_CDN=1 npm start
+```
+
+To build and start servers separately:
+
+```sh
+USE_CROSSORIGIN_CDN=1 npm run build
+USE_CROSSORIGIN_CDN=1 npm run server
+```
+
 ## Features
 
 To validate that this technique works for more than just simple, single-bundle sites, this boilerplate implements several advanced webpack features:
