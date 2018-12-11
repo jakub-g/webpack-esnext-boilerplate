@@ -20,6 +20,13 @@ const main = async () => {
   const response = await fetch('https://httpbin.org/user-agent');
   const responseText = await response.text();
 
+  setTimeout(async () => {
+     const {import3} = await import(
+      /* webpackChunkName: "import3" */
+      './import-3.js');
+     console.log('Dynamic Import 3 value:', import3);
+  }, 1500);
+
   console.log('Response:', responseText);
 };
 

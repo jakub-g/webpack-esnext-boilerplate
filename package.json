@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm test && node tasks/build.js",
     "start": "npm test && node tasks/watch.js",
+    "server": "node tasks/server.js",
     "test": "eslint --fix app/scripts/**/*.js tasks/**/*.js"
   },
   "repository": {

@@ -47,7 +47,7 @@ const addAsset = async (filename, revisionedFilename) => {
 
 
 const getRevisionedAssetUrl = (filename) => {
-  return path.join(config.publicStaticPath, getAsset(filename));
+  return getAsset(filename);
 };
 
 

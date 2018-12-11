@@ -5,6 +5,12 @@
   <title>Webpack ES.next Boilerplate</title>
 
   <!-- List dependencies in the head for faster discovery/preloading -->
+  <link rel="modulepreload" href="{{ 'runtime.mjs' | revision }}">
+  <link rel="modulepreload" href="{{ 'main.mjs' | revision }}">
+  <link rel="preload" as="script" href="{{ 'import1.mjs' | revision }}">
+  <link rel="preload" as="script" href="{{ 'import2.mjs' | revision }}">
+  <link rel="preload" as="script" href="{{ 'import3.mjs' | revision }}">
+
   <script type="module" src="{{ 'runtime.mjs' | revision }}"></script>
   <script type="module" src="{{ 'main.mjs' | revision }}"></script>
 </head>

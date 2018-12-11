@@ -6,6 +6,8 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const config = require('./config.json');
 const {addAsset, getManifest} = require('./utils/assets');
 
+const useCdn = process.env.USE_CROSSORIGIN_CDN === '1';
+
 const configurePlugins = () => {
   const plugins = [
     // Give dynamically `import()`-ed scripts a deterministic name for better
@@ -90,7 +92,7 @@ const modernConfig = Object.assign({}, baseConfig, {
   },
   output: {
     path: path.resolve(__dirname, '..', config.publicDir),
-    publicPath: '/',
+    publicPath: useCdn ? config.publicPathCdn : config.publicPath,
     filename: '[name]-[chunkhash:10].mjs',
   },
   plugins: configurePlugins(),
@@ -115,7 +117,7 @@ const legacyConfig = Object.assign({}, baseConfig, {
   },
   output: {
     path: path.resolve(__dirname, '..', config.publicDir),
-    publicPath: '/',
+    publicPath: useCdn ? config.publicPathCdn : config.publicPath,
     filename: '[name]-[chunkhash:10].es5.js',
   },
   plugins: configurePlugins(),
